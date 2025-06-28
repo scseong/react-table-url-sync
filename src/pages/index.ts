@@ -5,3 +5,4 @@ export { default as ProductDetail } from "./ProductDetail";
 export { default as ProductEdit } from "./ProductEdit";
 export { default as ProductSearch } from "./ProductSearch";
 export { default as ProductsList } from "./ProductsList";
+export { default as NotFound } from "./NotFound";

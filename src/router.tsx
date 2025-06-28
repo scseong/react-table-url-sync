@@ -1,7 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import {
   Categories,
   CategoryProducts,
+  NotFound,
   ProductCreate,
   ProductDetail,
   ProductEdit,
@@ -12,7 +13,8 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProductsList />
+    element: <Navigate to="/products" replace />,
+    errorElement: <NotFound />
   },
   {
     path: "/products",
