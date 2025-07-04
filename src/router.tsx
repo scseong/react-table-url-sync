@@ -9,6 +9,7 @@ import {
   ProductSearch,
   ProductsList
 } from "@/pages";
+import Layout from "@/components/Layout";
 
 const router = createBrowserRouter([
   {
@@ -18,31 +19,37 @@ const router = createBrowserRouter([
   },
   {
     path: "/products",
-    element: <ProductsList />
-  },
-  {
-    path: "/products/search",
-    element: <ProductSearch />
-  },
-  {
-    path: "/products/categories",
-    element: <Categories />
-  },
-  {
-    path: "/products/category/:category",
-    element: <CategoryProducts />
-  },
-  {
-    path: "/products/new",
-    element: <ProductCreate />
-  },
-  {
-    path: "/products/:id/edit",
-    element: <ProductEdit />
-  },
-  {
-    path: "/products/:id",
-    element: <ProductDetail />
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <ProductsList />
+      },
+      {
+        path: "search",
+        element: <ProductSearch />
+      },
+      {
+        path: "categories",
+        element: <Categories />
+      },
+      {
+        path: "category/:category",
+        element: <CategoryProducts />
+      },
+      {
+        path: "new",
+        element: <ProductCreate />
+      },
+      {
+        path: ":id",
+        element: <ProductDetail />
+      },
+      {
+        path: ":id/edit",
+        element: <ProductEdit />
+      }
+    ]
   }
 ]);
 
