@@ -1,0 +1,32 @@
+.header {
+  width: 100%;
+
+  .header_wrap {
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: $max-width;
+    height: $header-height;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .icons {
+    padding-right: 2rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    ul {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}

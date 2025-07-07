@@ -1,6 +1,7 @@
 import Header from "./Header";
-import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import styles from "./layout.module.scss";
 
 export default function Layout() {
   return (
@@ -9,7 +10,7 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
-      <Sidebar />
+      <Footer />
     </>
   );
 }
