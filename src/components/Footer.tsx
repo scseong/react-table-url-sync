@@ -1,3 +1,9 @@
+import styles from "./layout.module.scss";
+
 export default function Footer() {
-  return <footer>Footer</footer>;
+  return (
+    <footer>
+      <div className={styles.footer_wrap}>Footer</div>
+    </footer>
+  );
 }

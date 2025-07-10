@@ -6,7 +6,7 @@ export default function CategoriesMenu() {
   const mainCategories = Object.keys(categoryGroups) as MainCategory[];
 
   return (
-    <nav className={styles.nav}>
+    <nav>
       <div className={styles.nav_wrap}>
         <ul className={styles.category_list}>
           {mainCategories.map((category) => (
