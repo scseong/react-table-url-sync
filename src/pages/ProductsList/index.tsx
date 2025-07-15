@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Carousel from "@/components/Carousel/Carousel";
+
+const SLIDE_COUNT = 5;
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 export default function ProductsList() {
   const [, setProducts] = useState([]);
@@ -15,5 +19,9 @@ export default function ProductsList() {
 
   if (loading) return <div>로딩 중...</div>;
 
-  return <div>App</div>;
+  return (
+    <>
+      <Carousel slides={SLIDES} />
+    </>
+  );
 }
