@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Carousel from "@/components/Carousel/Carousel";
 
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
+const SLIDES = [
+  { id: 1, imageUrl: "/images/banner_1.jpg" },
+  { id: 2, imageUrl: "/images/banner_2.jpg" }
+];
 
 export default function ProductsList() {
   const [, setProducts] = useState([]);
@@ -21,7 +23,7 @@ export default function ProductsList() {
 
   return (
     <>
-      <Carousel slides={SLIDES} />
+      <Carousel slides={SLIDES} options={{ loop: true }} />
     </>
   );
 }
