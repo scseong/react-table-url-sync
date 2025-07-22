@@ -1,0 +1,23 @@
+.carousel_viewport {
+  overflow: hidden;
+}
+
+.carousel_container {
+  margin-left: calc(var(--slide-spacing) * -1);
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.carousel_slide {
+  padding-left: var(--slide-spacing);
+  flex: 0 0 100%;
+  min-width: 0;
+  transform: translate3d(0, 0, 0);
+
+  .carousel_slide_image {
+    display: block;
+    width: 100%;
+    height: var(--slide-height);
+    aspect-ratio: 22 / 9;
+  }
+}
