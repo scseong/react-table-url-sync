@@ -1,56 +1,26 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
-import {
-  Categories,
-  CategoryProducts,
-  NotFound,
-  ProductCreate,
-  ProductDetail,
-  ProductEdit,
-  ProductSearch,
-  ProductsList
-} from "@/pages";
-import Layout from "@/components/Layout";
+import { createBrowserRouter } from "react-router-dom";
+import { Home, MovieList, MovieDetail, SearchResult, NotFound } from "@/pages";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/products" replace />,
-    errorElement: <NotFound />
+    element: <Home />
   },
   {
-    path: "/products",
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <ProductsList />
-      },
-      {
-        path: "search",
-        element: <ProductSearch />
-      },
-      {
-        path: "categories",
-        element: <Categories />
-      },
-      {
-        path: "category/:category",
-        element: <CategoryProducts />,
-        children: [{ path: ":category" }]
-      },
-      {
-        path: "new",
-        element: <ProductCreate />
-      },
-      {
-        path: ":id",
-        element: <ProductDetail />
-      },
-      {
-        path: ":id/edit",
-        element: <ProductEdit />
-      }
-    ]
+    path: "/movies",
+    element: <MovieList />
+  },
+  {
+    path: "/movies/:id",
+    element: <MovieDetail />
+  },
+  {
+    path: "/search",
+    element: <SearchResult />
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ]);
 
