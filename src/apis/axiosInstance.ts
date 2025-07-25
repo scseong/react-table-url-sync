@@ -2,7 +2,7 @@ import axios from "axios";
 
 const ACCESS_TOKEN = import.meta.env.VITE_TMDB_ACCESS_TOKEN;
 
-export const axiosWithToken = axios.create({
+const axiosWithToken = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   headers: {
     "Content-Type": "application/json"
@@ -30,3 +30,5 @@ axiosWithToken.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+export default axiosWithToken;
