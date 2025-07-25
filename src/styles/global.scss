@@ -2,7 +2,7 @@
 *, *::before, *::after {box-sizing:border-box;}
 :root {-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%;cursor:default;line-height:1.5;overflow-wrap:break-word;-moz-tab-size:4;tab-size:4}
 html {font-size:62.5%}
-body {height:100dvh;background:$bg-color;color:$text-color;font-size:1.6rem;font-family:'Poppins','Noto Sans KR',sans-serif;}
+body {height:100dvh;background:$color-background;color:$color-text-primary;font-size:$font-size-md;font-family:'Poppins','Noto Sans KR',sans-serif;}
 ul,ol {list-style: none;}
 img, picture, video, canvas, svg {display: block;max-width:100%;}
 button {background:none;border:0;cursor:pointer;}

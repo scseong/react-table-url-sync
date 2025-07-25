@@ -1,13 +1,32 @@
-$primary-color: #0e1518;
-$primary-light-color: #252a2d;
-$secondary-color: #959ca3;
-$bg-color: #0e1518;
-$text-color: #f9f8ff;
+$color-primary: #0e1518;
+$color-primary-light: #252a2d;
+// $color-primary-dark: #4338ca;
+$color-secondary: #252a2d;
+// $color-secondary-light: #959ca3;
+// $color-secondary-drak: #959ca3;
 
-$active-color: #f3f3f3;
-$active-text-color: #0e1518;
+$color-background: #0e1518;
+$color-surface: $color-primary-light;
+$color-surface-active: #f9f8ff;
+$color-text-primary: #f9f8ff;
+$color-text-secondary: #a9a9a9;
+$color-text-active: $color-primary;
+$color-border: #303537;
 
-$layout-bg-color: #f3f3f3;
+$font-size-sm: 1.2rem;
+$font-size-md: 1.6rem;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2rem;
 
-$max-width: 60rem;
-$header-height: 80px;
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+
+// https://www.favocolor.com/hex/0e1518

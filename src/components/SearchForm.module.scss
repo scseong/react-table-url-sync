@@ -1,0 +1,38 @@
+.form {
+  padding: 1rem;
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+  background-color: $color-surface;
+  border-radius: $border-radius-lg;
+
+  input {
+    padding: 1rem 0;
+    flex: 1;
+    height: 3.6rem;
+    background-color: inherit;
+    border: none;
+    font-size: $font-size-sm;
+    outline: none;
+  }
+}
+
+.divide {
+  width: 1px;
+  height: 2.8rem;
+  background-color: $color-border;
+}
+
+.icon_wrap {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: $color-text-secondary;
+    stroke: $color-text-secondary;
+  }
+}

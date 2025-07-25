@@ -2,20 +2,6 @@
   width: 100%;
 }
 
-.form {
-  padding: 0 1rem;
-  background-color: lighten($bg-color, 5%);
-}
-
-.input_container {
-  display: flex;
-
-  input {
-    flex: 1;
-    height: 3.6rem;
-  }
-}
-
 .header_title {
   @include blind;
 }
