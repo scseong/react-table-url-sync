@@ -1,0 +1,26 @@
+.genre_list {
+  display: flex;
+  overflow: scroll;
+  gap: 0.6rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.genre_item {
+  button {
+    padding: 0 1.6rem;
+    height: 4rem;
+    background-color: $primary-light-color;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1;
+
+    &.active {
+      background-color: $active-color;
+      color: $active-text-color;
+    }
+  }
+}

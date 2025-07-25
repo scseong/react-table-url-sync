@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 import { IoSearchOutline, IoOptions } from "react-icons/io5";
+import GenreList from "@/components/GenreList";
 import getMovieGenres from "@/apis/getMovieGenres";
 import type { MovieGenre } from "@/types/movies";
 import styles from "./layout.module.scss";
 
 export default function Header() {
+  const [activeGenreId, setActiveGenreId] = useState<number | null>(null);
   const [genres, setGenres] = useState<MovieGenre[]>([]);
   const [error, setError] = useState<string | null>(null);
 
+  const handleGenreButtonClick = (id: number) => {
+    setActiveGenreId(id);
+  };
+
   useEffect(() => {
-    async function fetchCategories() {
+    const fetchMovieGenres = async () => {
       try {
         const genres = await getMovieGenres();
         setGenres(genres);
       } catch (error) {
         setError("");
       }
-    }
+    };
 
-    fetchCategories();
+    fetchMovieGenres();
   }, []);
 
   return (
@@ -34,13 +40,7 @@ export default function Header() {
         </div>
       </form>
       <nav>
-        <ul>
-          {genres.map((genre) => (
-            <li key={genre.id}>
-              <button>{genre.name}</button>
-            </li>
-          ))}
-        </ul>
+        <GenreList genres={genres} activeGenreId={activeGenreId} onGenreClick={handleGenreButtonClick} />
       </nav>
     </header>
   );
