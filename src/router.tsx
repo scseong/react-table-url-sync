@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home, MovieList, MovieDetail, SearchResult, NotFound } from "@/pages";
-import HomeLayout from "./components/HomeLayout";
+import HomeLayout from "@/components/Layout/HomeLayout";
 
 const router = createBrowserRouter([
   {
