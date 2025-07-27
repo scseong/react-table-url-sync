@@ -9,7 +9,9 @@ type DraggableHook = {
   onMouseLeave: (e: React.MouseEvent) => void;
 };
 
-export const useDraggable = <T extends HTMLElement = HTMLElement>(scrollerRef: RefObject<T | null>): DraggableHook => {
+export const useDraggable = <T extends HTMLElement = HTMLElement>(
+  scrollerRef: RefObject<T | null>
+): DraggableHook => {
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startX, setStartX] = useState<number>(0);
   const [totalX, setTotalX] = useState<number>(0);
@@ -49,7 +51,6 @@ export const useDraggable = <T extends HTMLElement = HTMLElement>(scrollerRef: R
         child.addEventListener("click", preventUnexpectedEventsDOM);
       });
     } else {
-      console.log("hihihhi");
       childNodes.forEach((child) => {
         child.removeEventListener("click", preventUnexpectedEventsDOM);
       });

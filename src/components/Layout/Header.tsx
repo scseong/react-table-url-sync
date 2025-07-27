@@ -32,7 +32,11 @@ export default function Header() {
       <h1 className={styles.header_title}>Movie Finder</h1>
       <SearchForm />
       <nav>
-        <GenreList genres={genres} activeGenreId={activeGenreId} onGenreClick={handleGenreButtonClick} />
+        <GenreList
+          genres={genres}
+          activeGenreId={activeGenreId}
+          onGenreClick={handleGenreButtonClick}
+        />
       </nav>
     </header>
   );

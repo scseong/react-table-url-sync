@@ -12,12 +12,14 @@ type Props = {
 
 export default function GenreList({ genres, activeGenreId, onGenreClick }: Props) {
   const containerRef = useRef<HTMLUListElement>(null);
-  const { isDragging, onMouseDown, onMouseMove, onMouseUp, onMouseLeave } = useDraggable(containerRef);
+  const { isDragging, onMouseDown, onMouseMove, onMouseUp, onMouseLeave } =
+    useDraggable(containerRef);
 
   const handleClick = (id: number) => {
     if (isDragging) {
       return;
     }
+
     onGenreClick(id);
   };
 
@@ -30,6 +32,12 @@ export default function GenreList({ genres, activeGenreId, onGenreClick }: Props
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseLeave}
     >
+      <GenreButton
+        id={0}
+        onClick={handleClick}
+        name="All"
+        active={activeGenreId === 0 || activeGenreId === null}
+      />
       {genres.map((genre) => (
         <GenreButton
           key={genre.id}
