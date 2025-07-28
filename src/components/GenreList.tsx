@@ -32,12 +32,6 @@ export default function GenreList({ genres, activeGenreId, onGenreClick }: Props
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseLeave}
     >
-      <GenreButton
-        id={0}
-        onClick={handleClick}
-        name="All"
-        active={activeGenreId === 0 || activeGenreId === null}
-      />
       {genres.map((genre) => (
         <GenreButton
           key={genre.id}

@@ -19,8 +19,8 @@ export default function Header() {
       try {
         const genres = await getMovieGenres();
         setGenres(genres);
-      } catch (error) {
-        setError("");
+      } catch {
+        setError("Failed to get movie genres.");
       }
     };
 
@@ -37,6 +37,7 @@ export default function Header() {
           activeGenreId={activeGenreId}
           onGenreClick={handleGenreButtonClick}
         />
+        {error && <p>{error}</p>}
       </nav>
     </header>
   );
