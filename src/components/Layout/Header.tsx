@@ -1,0 +1,44 @@
+import { useState, useEffect } from "react";
+import GenreList from "@/components/GenreList";
+import SearchForm from "@/components/SearchForm";
+import getMovieGenres from "@/apis/getMovieGenres";
+import type { MovieGenre } from "@/types/movies";
+import styles from "./layout.module.scss";
+
+export default function Header() {
+  const [activeGenreId, setActiveGenreId] = useState<number | null>(null);
+  const [genres, setGenres] = useState<MovieGenre[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleGenreButtonClick = (id: number) => {
+    setActiveGenreId(id);
+  };
+
+  useEffect(() => {
+    const fetchMovieGenres = async () => {
+      try {
+        const genres = await getMovieGenres();
+        setGenres(genres);
+      } catch {
+        setError("Failed to get movie genres.");
+      }
+    };
+
+    fetchMovieGenres();
+  }, []);
+
+  return (
+    <header className={styles.header}>
+      <h1 className={styles.header_title}>Movie Finder</h1>
+      <SearchForm />
+      <nav>
+        <GenreList
+          genres={genres}
+          activeGenreId={activeGenreId}
+          onGenreClick={handleGenreButtonClick}
+        />
+        {error && <p>{error}</p>}
+      </nav>
+    </header>
+  );
+}

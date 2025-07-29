@@ -1,0 +1,12 @@
+@mixin blind {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  white-space: nowrap;
+  overflow: hidden;
+}

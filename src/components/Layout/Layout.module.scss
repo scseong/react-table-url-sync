@@ -1,0 +1,7 @@
+.header {
+  width: 100%;
+}
+
+.header_title {
+  @include blind;
+}
