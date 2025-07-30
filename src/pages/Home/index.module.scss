@@ -1,0 +1,19 @@
+.section_title {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: $font-size-lg;
+    font-weight: 600;
+  }
+
+  a {
+    color: $color-text-secondary;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: darken($color-text-secondary, 20%);
+    }
+  }
+}
