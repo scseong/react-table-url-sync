@@ -1,6 +1,6 @@
 $slide-spacing: 1rem;
 $slide-size-main: 90%;
-$slide-size: 40%;
+$slide-size: 33.3%;
 $slide-dot-size: 0.8rem;
 
 .carousel_viewport {
@@ -10,7 +10,7 @@ $slide-dot-size: 0.8rem;
 .carousel_container {
   margin-left: calc($slide-spacing * -1);
   display: flex;
-  align-items: center;
+  align-items: start;
   touch-action: pan-y pinch-zoom;
 }
 
@@ -25,7 +25,6 @@ $slide-dot-size: 0.8rem;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 3rem;
   }
 }
 
@@ -33,6 +32,7 @@ $slide-dot-size: 0.8rem;
   flex: 0 0 $slide-size-main;
 
   .carousel_slide_image {
+    border-radius: 1rem;
     aspect-ratio: 16 / 9;
   }
 }
@@ -44,6 +44,20 @@ $slide-dot-size: 0.8rem;
     width: fit-content;
     max-height: 250px;
     aspect-ratio: 2 / 3;
+  }
+
+  .movie_info {
+    margin-top: $spacing-xs;
+
+    h3 {
+      @include ellipse;
+      font-size: $font-size-sm;
+    }
+
+    & > p {
+      font-size: $font-size-xs;
+      color: $color-text-secondary;
+    }
   }
 }
 

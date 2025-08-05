@@ -42,7 +42,7 @@ export default function Home() {
           <h2>New</h2>
           <Link to="/movies?category=new">See all</Link>
         </div>
-        <Carousel movies={movies.upcomingMovies} />
+        <Carousel className={styles.movie_carousel} movies={movies.upcomingMovies} />
       </section>
       <section aria-label="">
         <div>
