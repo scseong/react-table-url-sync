@@ -5,6 +5,7 @@ import Carousel from "@/components/Carousel/Carousel";
 import CarouselWithOpacity from "@/components/Carousel/CarouselWithOpacity";
 import getPopularMovies from "@/apis/getPopularMovies";
 import getUpcomingMovies from "@/apis/getUpcomingMovies";
+import getTopRatedMovies from "@/apis/getTopRatedMovies";
 import type { Movie } from "@/types/movies";
 import styles from "./index.module.scss";
 
@@ -13,17 +14,19 @@ const OPTIONS: EmblaOptionsType = { loop: true };
 export default function Home() {
   const [movies, setMovies] = useState({
     popularMovies: [] as Movie[],
-    upcomingMovies: [] as Movie[]
+    upcomingMovies: [] as Movie[],
+    topRatedMovies: [] as Movie[]
   });
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const [popularMovies, upcomingMovies] = await Promise.all([
+        const [popularMovies, upcomingMovies, topRatedMovies] = await Promise.all([
           getPopularMovies(),
-          getUpcomingMovies()
+          getUpcomingMovies(),
+          getTopRatedMovies()
         ]);
-        setMovies((prev) => ({ ...prev, popularMovies, upcomingMovies }));
+        setMovies((prev) => ({ ...prev, popularMovies, upcomingMovies, topRatedMovies }));
       } catch (error) {
         console.error(error);
       }
@@ -44,12 +47,12 @@ export default function Home() {
         </div>
         <Carousel className={styles.movie_carousel} movies={movies.upcomingMovies} />
       </section>
-      <section aria-label="">
-        <div>
-          <h2>Movies List</h2>
-          <Link to="/">See all</Link>
-          <div>Carousel</div>
+      <section aria-label="Top Rated">
+        <div className={styles.section_title}>
+          <h2>Top Rated</h2>
+          <Link to="/movies?category=top_rated">See all</Link>
         </div>
+        <Carousel className={styles.movie_carousel} movies={movies.topRatedMovies} />
       </section>
     </>
   );
