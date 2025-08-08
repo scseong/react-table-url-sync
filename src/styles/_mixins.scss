@@ -10,3 +10,9 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+@mixin ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

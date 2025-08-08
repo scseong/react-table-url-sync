@@ -1,23 +1,104 @@
+$slide-spacing: 1rem;
+$slide-size-main: 90%;
+$slide-size: 33.3%;
+$slide-dot-size: 0.8rem;
+
 .carousel_viewport {
   overflow: hidden;
 }
 
 .carousel_container {
-  margin-left: calc(var(--slide-spacing) * -1);
+  margin-left: calc($slide-spacing * -1);
   display: flex;
+  align-items: start;
   touch-action: pan-y pinch-zoom;
 }
 
+.carousel_slide_banner,
 .carousel_slide {
-  padding-left: var(--slide-spacing);
-  flex: 0 0 100%;
+  padding-left: $slide-spacing;
   min-width: 0;
   transform: translate3d(0, 0, 0);
 
   .carousel_slide_image {
     display: block;
     width: 100%;
-    height: var(--slide-height);
-    aspect-ratio: 22 / 9;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
+.carousel_slide_banner {
+  flex: 0 0 $slide-size-main;
+
+  .carousel_slide_image {
+    border-radius: 1rem;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.carousel_slide {
+  flex: 0 0 $slide-size;
+
+  .carousel_slide_image {
+    width: fit-content;
+    max-height: 250px;
+    aspect-ratio: 2 / 3;
+  }
+
+  .movie_info {
+    margin-top: $spacing-xs;
+
+    h3 {
+      @include ellipse;
+      font-size: $font-size-sm;
+    }
+
+    & > p {
+      font-size: $font-size-xs;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.carousel_controls {
+  display: grid;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+  justify-content: center;
+
+  .carousel_dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: $slide-dot-size;
+
+    .carousel_dot {
+      -webkit-tap-highlight-color: rgba(220, 220, 220, 0.5);
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: rgba(220, 220, 220, 0.5);
+      touch-action: manipulation;
+      display: inline-flex;
+      text-decoration: none;
+      cursor: pointer;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: $slide-dot-size;
+      height: $slide-dot-size;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease-out;
+    }
+
+    .carousel_dot--selected {
+      width: calc($slide-dot-size + 0.1rem);
+      height: calc($slide-dot-size + 0.1rem);
+      background-color: white;
+    }
   }
 }

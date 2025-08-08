@@ -1,5 +1,5 @@
 .genre_list {
-  padding: 1rem;
+  padding: $spacing-xs $spacing-md $spacing-lg $spacing-lg;
   display: flex;
   overflow: scroll;
   gap: 0.6rem;
@@ -15,7 +15,7 @@
     height: 3.2rem;
     background-color: $color-surface;
     border-radius: $border-radius-xl;
-    font-size: $font-size-sm;
+    font-size: $font-size-xs;
     font-weight: 500;
     line-height: 1;
     letter-spacing: -0.02rem;

@@ -1,0 +1,27 @@
+@use "sass:color";
+
+.section_title {
+  padding: $spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  h2 {
+    font-size: $font-size-lg;
+    font-weight: 600;
+  }
+
+  a {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: color.adjust($color-text-secondary, $lightness: -20%);
+    }
+  }
+}
+
+.movie_carousel {
+  padding: 0 $spacing-lg $spacing-lg;
+}
