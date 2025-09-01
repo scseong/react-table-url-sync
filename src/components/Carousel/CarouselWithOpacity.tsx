@@ -4,11 +4,11 @@ import type { EmblaCarouselType, EmblaEventType, EmblaOptionsType } from "embla-
 import { Link } from "react-router-dom";
 import { useDotButton } from "@/hooks/useDotButton";
 import DotButton from "./DotButton";
+import { BASE_IMAGE_URL } from "@/constants/url";
 import type { Movie } from "@/types/movies";
 import styles from "./carousel.module.scss";
 
 const TWEEN_FACTOR_BASE = 0.65;
-const IMAGE_BASE_URL = import.meta.env.VITE_TMDB_IMAGE_BASE_URL;
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
 
@@ -86,7 +86,7 @@ export default function CarouselWithOpacity(props: PropType) {
               <Link to={`/movies/${movie.id}`}>
                 <img
                   className={styles.carousel_slide_image}
-                  src={IMAGE_BASE_URL + movie.backdrop_path}
+                  src={BASE_IMAGE_URL + movie.backdrop_path}
                   alt={movie.title}
                 />
               </Link>
