@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ExpandableText from "@/components/Common/ExpandableText";
 import getMovieDetail from "@/apis/getMovieDetail";
 import { BASE_IMAGE_URL } from "@/constants/url";
+import { runtimeToHourMinute } from "@/utils/time";
 import type { MovieDetail } from "@/types/movies";
 import styles from "./index.module.scss";
 
@@ -37,12 +39,21 @@ export default function MovieDetail() {
           </figcaption>
         </figure>
         <section>
-          <ul className={styles.movie_meta}>
-            <li>{movieDetail.genres[0].name}</li>
-            <li>{movieDetail.release_date}</li>
-            <li>{movieDetail.status}</li>
-            <li>{movieDetail.runtime}</li>
-          </ul>
+          {/* <h2>Movie Meta</h2> */}
+          <dl className={styles.movie_meta}>
+            <dt>장르</dt>
+            <dd>{movieDetail.genres[0].name}</dd>
+            <dt>개봉일</dt>
+            <dd>{movieDetail.release_date}</dd>
+            <dt>상태</dt>
+            <dd>{movieDetail.status}</dd>
+            <dt>러닝타임</dt>
+            <dd>{runtimeToHourMinute(movieDetail.runtime)}</dd>
+          </dl>
+        </section>
+        <section>
+          {/* <h2>Movie Info</h2> */}
+          <ExpandableText text={movieDetail.overview} maxLength={140} />
         </section>
       </article>
     </>

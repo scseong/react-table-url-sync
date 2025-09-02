@@ -1,0 +1,23 @@
+.text_wrap {
+  padding: 2rem;
+
+  p {
+    display: inline;
+    font-size: $font-size-sm;
+    line-height: 1.67;
+    color: $color-text-secondary;
+  }
+
+  button {
+    display: inline-block;
+    font-size: $font-size-sm;
+    // color:
+
+    &:hover {
+    }
+  }
+
+  .expanded_btn {
+    margin-left: 1rem;
+  }
+}
