@@ -1,0 +1,60 @@
+.review {
+  padding: $spacing-md;
+  background-color: $color-surface;
+  border-radius: $border-radius-lg;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      display: flex;
+
+      .avatar {
+        margin-right: $spacing-sm;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+
+      .author_wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .author {
+          font-size: $font-size-sm;
+        }
+
+        .date {
+          font-size: $font-size-xs;
+          color: $color-text-muted;
+          line-height: 1;
+        }
+      }
+    }
+
+    .rating {
+      flex-basis: 15%;
+      display: flex;
+      align-items: inherit;
+
+      svg {
+        margin-right: 0.4rem;
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
+
+  .content {
+    margin-top: $spacing-sm;
+
+    p {
+      font-size: $font-size-xs;
+      color: $color-text-secondary;
+      @include line-clamp(4);
+    }
+  }
+}
