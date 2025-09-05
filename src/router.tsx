@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, MovieList, MovieDetail, SearchResult, NotFound } from "@/pages";
+import { Home, MovieList, MovieDetail, MovieReviewList, SearchResult, NotFound } from "@/pages";
 import HomeLayout from "@/components/Layout/HomeLayout";
 
 const router = createBrowserRouter([
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/movies/:id",
     element: <MovieDetail />
+  },
+  {
+    path: "/movies/:id/reviews",
+    element: <MovieReviewList />
   },
   {
     path: "/search",
