@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import ReviewItem from "@/components/Review/ReviewItem";
 import CommonCarousel from "@/components/Carousel/CommonCarousel";
+import SectionHeader from "@/components/Common/SectionHeader";
 import ExpandableText from "@/components/Common/ExpandableText";
 import IconWrapper from "@/components/Common/IconWrapper";
 import getMovieDetail from "@/apis/getMovieDetail";
@@ -62,7 +63,8 @@ export default function MovieDetail() {
         </section>
         <section className={styles.row}>
           {/* TODO: More See Link */}
-          <h2>Rating & Reviews</h2>
+          {/* <h2>Rating & Reviews</h2> */}
+          <SectionHeader title="Rating & Reviews" moreLink={`/movies/${id}/reviews`} />
           <div className={styles.ratings}>
             <div className={styles.ratings_vote}>
               <p>
@@ -78,7 +80,11 @@ export default function MovieDetail() {
           <div className={styles.reviews}>
             <CommonCarousel
               items={movieReviews!}
-              renderItem={(review) => <ReviewItem review={review} />}
+              renderItem={(review) => (
+                <Link to={`/movies/${id}/reviews#${review.id}`}>
+                  <ReviewItem review={review} />
+                </Link>
+              )}
             />
           </div>
         </section>
