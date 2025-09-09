@@ -10,6 +10,7 @@ import getMovieDetail from "@/apis/getMovieDetail";
 import getMovieReviews from "@/apis/getMovieReviews";
 import { BASE_IMAGE_URL } from "@/constants/url";
 import { runtimeToHourMinute } from "@/utils/time";
+import { formatDate } from "@/utils/date";
 import type { MovieDetail, MovieReview } from "@/types/movies";
 import styles from "./index.module.scss";
 
@@ -47,13 +48,13 @@ export default function MovieDetail() {
             </figcaption>
           </figure>
           <dl className={styles.movie_meta}>
-            <dt>장르</dt>
+            <dt>gernes</dt>
             <dd>{movieDetail.genres[0].name}</dd>
-            <dt>개봉일</dt>
-            <dd>{movieDetail.release_date}</dd>
-            <dt>상태</dt>
+            <dt>release date</dt>
+            <dd>{formatDate(movieDetail.release_date, "yearOnly")}</dd>
+            <dt>status</dt>
             <dd>{movieDetail.status}</dd>
-            <dt>러닝타임</dt>
+            <dt>runtime</dt>
             <dd>{runtimeToHourMinute(movieDetail.runtime)}</dd>
           </dl>
         </section>
@@ -62,8 +63,6 @@ export default function MovieDetail() {
           <ExpandableText text={movieDetail.overview} maxLength={140} />
         </section>
         <section className={styles.row}>
-          {/* TODO: More See Link */}
-          {/* <h2>Rating & Reviews</h2> */}
           <SectionHeader title="Rating & Reviews" moreLink={`/movies/${id}/reviews`} />
           <div className={styles.ratings}>
             <div className={styles.ratings_vote}>

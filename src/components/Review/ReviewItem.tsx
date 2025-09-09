@@ -7,9 +7,10 @@ import styles from "./ReviewItem.module.scss";
 
 type Props = {
   review: MovieReview;
+  isShow: boolean;
 };
 
-export default function ReviewItem({ review }: Props) {
+export default function ReviewItem({ review, isShow = false }: Props) {
   const { author, author_details, content, created_at } = review || {};
   const { avatar_path, rating } = author_details || {};
 
