@@ -1,0 +1,21 @@
+// TODO: Text Shift
+.text_wrap {
+  p {
+    display: inline;
+    font-size: $font-size-sm;
+    line-height: 1.67;
+    color: $color-text-muted;
+  }
+
+  button {
+    display: inline-block;
+    font-size: $font-size-sm;
+
+    &:hover {
+    }
+  }
+
+  .expanded_btn {
+    margin-left: 1rem;
+  }
+}

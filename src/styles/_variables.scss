@@ -1,29 +1,61 @@
-$color-primary: #0e1518;
-$color-primary-light: #252a2d;
-$color-primary-dark: #0b1113;
-$color-secondary: #252a2d;
-$color-secondary-light: #aab0b5;
-$color-secondary-drak: #686d72;
+// Primitive scale
+$color-gray-100: #ffffff;
+$color-gray-90: #e6e6e6;
+$color-gray-80: #cccccc;
+$color-gray-70: #b3b3b3;
+$color-gray-60: #999999;
+$color-gray-50: #808080;
+$color-gray-40: #666666;
+$color-gray-30: #4d4d4d;
+$color-gray-20: #333333;
+$color-gray-10: #1a1a1a;
+$color-gray-0: #060606;
 
-$color-background: #0e1518;
-$color-surface: $color-primary-light;
-$color-surface-active: #f9f8ff;
-$color-text-primary: #f9f8ff;
-$color-text-secondary: #a9a9a9;
-$color-text-active: $color-primary;
-$color-border: #303537;
+// Primary Palette
+$color-primary: #fff;
+$color-primary-dark: #060606;
+$color-secondary: #ffffffcc;
+$color-secondary-active: #ffffff80;
+$color-tertiary: #ffffff70;
+$color-tertiary-acitve: #ffffff33;
+$color-quaternary: #ffffff17;
+
+// Background, Surface
+$color-background: $color-gray-0;
+$color-surface: $color-gray-20;
+$color-surface-dark: $color-gray-10;
+$color-surface-light: $color-gray-30;
+$color-surface-active: $color-gray-80;
+
+// Border
+$color-border: $color-gray-20;
+
+// Text
+$color-text-primary: #fafaf8;
+$color-text-secondary: #e0dfe5;
+$color-text-secondary-active: #a6a6a6;
+$color-text-muted: $color-gray-70;
+$color-text-disabled: #6c7072;
+$color-text-inverse: #0e1518;
+
+$color-text-info: #c9ccd0;
+$color-text-success: #aeb5b2;
+$color-text-warning: #c4b9a5;
+$color-text-error: #b8a8a8;
 
 $font-size-xs: 1.2rem;
 $font-size-sm: 1.4rem;
 $font-size-md: 1.6rem;
 $font-size-lg: 1.8rem;
 $font-size-xl: 2rem;
+$font-size-xxl: 2.2rem;
 
 $spacing-xs: 4px;
 $spacing-sm: 8px;
 $spacing-md: 12px;
 $spacing-lg: 16px;
 $spacing-xl: 20px;
+$spacing-xxl: 24px;
 
 $border-radius-sm: 4px;
 $border-radius-md: 8px;

@@ -1,0 +1,30 @@
+.header {
+  padding: $spacing-sm;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    padding: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 1rem;
+    background-color: $color-surface-dark;
+    border-radius: 50%;
+    color: $color-text-muted;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $color-surface;
+    }
+  }
+
+  h1 {
+    display: inline-block;
+    font-size: $font-size-xxl;
+    text-transform: capitalize;
+  }
+}

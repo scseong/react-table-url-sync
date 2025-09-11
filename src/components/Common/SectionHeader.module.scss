@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin-bottom: $spacing-sm;
+    font-size: $font-size-lg;
+  }
+
+  svg {
+    font-size: $font-size-sm;
+  }
+}

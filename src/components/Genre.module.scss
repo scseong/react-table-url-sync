@@ -22,7 +22,8 @@
 
     &.active {
       background-color: $color-surface-active;
-      color: $color-text-active;
+      font-weight: bold;
+      color: $color-text-inverse;
     }
   }
 }

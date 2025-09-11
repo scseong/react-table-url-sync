@@ -1,0 +1,117 @@
+@use "sass:color";
+
+.figure_wrap {
+  background: color.adjust($color-surface-dark, $lightness: -4%);
+}
+
+.poster_wrap {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10rem;
+    content: "";
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+  }
+
+  & > img {
+    position: relative;
+    aspect-ratio: 3 / 4;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: $spacing-md $spacing-xl;
+    text-align: center;
+
+    h1 {
+      position: relative;
+      display: inline-block;
+      font-size: $font-size-xxl;
+      font-weight: 600;
+      text-shadow: 1px 1px 1px $color-primary-dark;
+      z-index: 2;
+    }
+  }
+}
+
+.movie_meta {
+  display: flex;
+  justify-self: center;
+  gap: $spacing-sm;
+  padding: $spacing-lg 0;
+
+  dt {
+    @include blind;
+  }
+
+  dd {
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-surface;
+    border-radius: $border-radius-xl;
+    font-size: $font-size-xs;
+    line-height: 1;
+    color: $color-text-muted;
+  }
+}
+
+.row {
+  padding: $spacing-md $spacing-xl;
+}
+
+.ratings {
+  margin-bottom: $spacing-md;
+  padding: $spacing-md;
+  display: flex;
+  background-color: $color-surface;
+  border-radius: $border-radius-lg;
+
+  .ratings_vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 45%;
+    border-right: 1px solid $color-quaternary;
+
+    p {
+      display: flex;
+      align-items: center;
+      font-size: $font-size-xxl;
+
+      &:last-child {
+        font-size: $font-size-xs;
+        color: $color-text-muted;
+      }
+    }
+
+    svg {
+      margin-right: $spacing-xs;
+    }
+  }
+
+  .ratings_btn_wrap {
+    flex-basis: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 70%;
+      height: 80%;
+      background-color: $color-surface-light;
+      border-radius: $border-radius-xl;
+      font-weight: 500;
+    }
+  }
+}
+
+.reviews {
+  border-radius: $border-radius-lg;
+}

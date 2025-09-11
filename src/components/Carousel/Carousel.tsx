@@ -3,6 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import clsx from "clsx";
 import { formatDate } from "@/utils/date";
 import type { EmblaOptionsType } from "embla-carousel";
+import { BASE_IMAGE_URL } from "@/constants/url";
 import type { Movie } from "@/types/movies";
 import styles from "./carousel.module.scss";
 
@@ -11,8 +12,6 @@ type PropType = {
   options?: EmblaOptionsType;
   className?: string;
 };
-
-const BASE_IMAGE_URL = import.meta.env.VITE_TMDB_IMAGE_BASE_URL;
 
 export default function Carousel(props: PropType) {
   const { movies, options, className } = props;
